@@ -31,6 +31,15 @@ function clickSelectedLink(index) {
 // Track the currently selected result
 let currentIndex = -1;
 
+// Automatically highlight the first result when the page loads
+function autoHighlightFirstResult() {
+  const results = document.querySelectorAll('h3');
+  if (results.length > 0) {
+    currentIndex = 0; // Set the current index to the first result
+    selectResult(currentIndex); // Highlight the first result
+  }
+}
+
 // Listen for keydown events
 document.addEventListener('keydown', (event) => {
   const results = document.querySelectorAll('h3');
@@ -48,3 +57,6 @@ document.addEventListener('keydown', (event) => {
     clickSelectedLink(currentIndex);
   }
 });
+
+// Run the auto-highlight function when the page loads
+autoHighlightFirstResult();
