@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Vim-like Google Search Navigation",
+  "version": "1.0",
+  "description": "Navigate Google search results using 'j' and 'k' keys like Vim.",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/search?*"],
+      "js": ["content.js"]
+    }
+  ]
+}
